@@ -9,3 +9,4 @@
 | GET | `/api/admin/work-orders` | 成功计划任务清单 |
 | GET | `/api/shopfloor/dashboard` | 工程师任务工作台 |
 | POST | `/api/shopfloor/work-orders/{id}/reports` | 提交成功计划结果 |
+| POST | `/api/admin/renewal-readiness` | 客户续费准备度评估 |

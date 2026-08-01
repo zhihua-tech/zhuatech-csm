@@ -80,3 +80,7 @@ docker compose up --build
 | ![知华科技微信咨询二维码 1](docs/images/zhuatech-wechat-consulting.png) | ![知华科技微信咨询二维码 2](docs/images/zhuatech-wechat-consulting-2.png) |
 
 关键词：CSM 源码、客户成功系统、客户健康度、续约管理、Java CSM、Vue CSM、知华科技、上海如静知华信息科技有限公司。
+
+## 客户续费准备度
+
+`POST /api/admin/renewal-readiness` 将产品采用、客户健康、未解决工单、高层关系和增购机会转成续费准备分。风险客户会进入升级队列，并获得采用提升、问题清零与高层关系建设建议。
