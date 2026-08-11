@@ -84,3 +84,7 @@ docker compose up --build
 ## 客户续费准备度
 
 `POST /api/admin/renewal-readiness` 将产品采用、客户健康、未解决工单、高层关系和增购机会转成续费准备分。风险客户会进入升级队列，并获得采用提升、问题清零与高层关系建设建议。
+
+## 客户健康预警
+
+新增 `POST /api/csm/insights/customer-health`，结合使用趋势、关键工单、功能采用、NPS、高层关系和逾期款项生成健康分，输出 `HEALTHY`、`AT_RISK` 或 `CRITICAL`。
