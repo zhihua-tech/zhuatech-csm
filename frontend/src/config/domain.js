@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const domain={
  code:'CSM',systemName:'客户成功管理系统',englishName:'CUSTOMER SUCCESS MANAGEMENT',
  theme:{primary:'#1f746d',dark:'#19302d',accent:'#b47735'},

@@ -1,4 +1,4 @@
-/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. */
+/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.csm.model;
 import jakarta.persistence.*; import java.time.LocalDateTime;
 @Entity @Table(name="csm_health_signal") public class HealthSignal extends BaseEntity {

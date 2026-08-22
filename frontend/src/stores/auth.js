@@ -1,3 +1,3 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 import {defineStore} from 'pinia'; import http from '../api/http'
 export const useAuthStore=defineStore('auth',{state:()=>({user:JSON.parse(localStorage.getItem('zhuatech-csm-user')||'null')}),actions:{async login(username,password){let data;if(import.meta.env.VITE_DEMO_MODE==='true'){const operator=username==='operator';data={token:'demo-token',user:{username,fullName:operator?'陆承':'周妍',role:operator?'SUCCESS_MANAGER':'CSM_DIRECTOR',workCenterCode:operator?'PORT-CHEM':null}}}else{data=(await http.post('/auth/login',{username,password})).data.data}this.user=data.user;localStorage.setItem('zhuatech-csm-token',data.token);localStorage.setItem('zhuatech-csm-user',JSON.stringify(data.user));return data.user},logout(){this.user=null;localStorage.removeItem('zhuatech-csm-token');localStorage.removeItem('zhuatech-csm-user')}}})
