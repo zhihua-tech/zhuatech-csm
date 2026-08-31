@@ -88,3 +88,7 @@ docker compose up --build
 ## 客户健康预警
 
 新增 `POST /api/csm/insights/customer-health`，结合使用趋势、关键工单、功能采用、NPS、高层关系和逾期款项生成健康分，输出 `HEALTHY`、`AT_RISK` 或 `CRITICAL`。
+
+## 企业级客户升级事件治理
+
+新增 `POST /api/enterprise/csm/customer-escalation-governance`，统一检查责任体系、客户沟通、事件遏制、恢复 SLA、根因和恢复计划，返回 `PROCEED / EXECUTIVE_REVIEW / BLOCKED`。详见 [客户升级治理说明](docs/ENTERPRISE_CUSTOMER_ESCALATION.md)。
