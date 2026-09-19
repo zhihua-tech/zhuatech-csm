@@ -6,12 +6,21 @@ import cn.zhuatech.csm.service.CustomerEscalationGovernanceService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/enterprise/csm")
 public class CustomerEscalationGovernanceController {
     private final CustomerEscalationGovernanceService service;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public CustomerEscalationGovernanceController(CustomerEscalationGovernanceService service) { this.service = service; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PostMapping("/customer-escalation-governance")
     public ApiResponse<CustomerEscalationGovernanceService.Assessment> assess(
         @Valid @RequestBody CustomerEscalationGovernanceService.Request request) {

@@ -7,8 +7,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class CustomerEscalationGovernanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Assessment assess(Request request) {
         List<String> blockers = new ArrayList<>();
         List<String> actions = new ArrayList<>();
@@ -31,12 +37,21 @@ public class CustomerEscalationGovernanceService {
         return new Assessment(Decision.PROCEED, blockers, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String escalationId, @NotBlank String accountId,
                           @Min(1) int severity, boolean accountOwnerAssigned,
                           boolean executiveSponsorAssigned, boolean customerCommunicationApproved,
                           boolean dataScopeContained, @Min(0) int slaRemainingMinutes,
                           @Min(0) int estimatedRecoveryMinutes, boolean rootCauseOwnerAssigned,
                           boolean recoveryPlanApproved) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Assessment(Decision decision, List<String> blockers, List<String> actions) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision { PROCEED, EXECUTIVE_REVIEW, BLOCKED }
 }

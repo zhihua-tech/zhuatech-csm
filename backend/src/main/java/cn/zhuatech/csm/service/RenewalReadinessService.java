@@ -9,8 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class RenewalReadinessService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         int score = Math.max(0, Math.min(100, (int) Math.round(request.adoptionScore() * .35
             + request.healthScore() * .35 + (request.daysToRenewal() <= 90 ? 10 : 0)
@@ -25,11 +31,17 @@ public class RenewalReadinessService {
         return new Result(request.customerName(), score, readiness, "AT_RISK".equals(readiness), actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String customerName, @Min(0) int daysToRenewal,
                           @Min(0) @Max(100) int adoptionScore,
                           @Min(0) @Max(100) int healthScore,
                           @Min(0) int unresolvedCases, boolean executiveSponsor,
                           boolean expansionOpportunity) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String customerName, int readinessScore, String readiness,
                          boolean escalationRequired, List<String> actions) {}
 }
