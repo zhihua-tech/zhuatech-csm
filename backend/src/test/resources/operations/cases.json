@@ -1,0 +1,67 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "HOLD",
+      "weightedHealth": "#46",
+      "lowHealthRevenue": "#90000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "minimumHealth": "46"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "groupAHealth": "80"
+    },
+    "expected": {
+      "weightedHealth": "#82",
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "groupARevenue": "0",
+      "groupBRevenue": "0"
+    },
+    "expected": {
+      "decision": "REVIEW",
+      "weightedHealth": "N/A"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "riskCutoff": "40"
+    },
+    "expected": {
+      "lowHealthRevenue": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "groupAHealth": "101"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "groupARevenue": "0"
+    },
+    "expected": {
+      "weightedHealth": "#100",
+      "decision": "PASS"
+    },
+    "error": false
+  }
+]

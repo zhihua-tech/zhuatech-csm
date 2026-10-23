@@ -1,0 +1,93 @@
+{
+  "slug": "csm",
+  "title": "收入加权客户健康度",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "groupARevenue",
+      "label": "A组存量收入元",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "groupAHealth",
+      "label": "A组健康分",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    },
+    {
+      "key": "groupBRevenue",
+      "label": "B组存量收入元",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "groupBHealth",
+      "label": "B组健康分",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    },
+    {
+      "key": "minimumHealth",
+      "label": "最低加权健康分",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    },
+    {
+      "key": "riskCutoff",
+      "label": "低健康判定分",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    }
+  ],
+  "columns": [
+    {
+      "key": "weightedHealth",
+      "label": "收入加权健康分"
+    },
+    {
+      "key": "lowHealthRevenue",
+      "label": "低健康收入元"
+    },
+    {
+      "key": "lowHealthRevenuePct",
+      "label": "低健康收入占比%"
+    }
+  ],
+  "description": "以两组存量收入作为权重计算健康分，并突出低健康收入敞口，避免简单平均掩盖大客户风险；不是流失概率预测。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-24",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "groupARevenue": "90000",
+        "groupAHealth": "40",
+        "groupBRevenue": "10000",
+        "groupBHealth": "100",
+        "minimumHealth": "60",
+        "riskCutoff": "50"
+      }
+    ]
+  }
+}
