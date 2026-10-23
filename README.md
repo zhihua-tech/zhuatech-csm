@@ -1,5 +1,13 @@
 # 客户成功管理系统 / ZhuaTech CSM
 
+## 2026-10-23 功能更新：存量收入留存桥接分析
+
+区分存量扩张、降购、流失和新增收入，计算NRR与GRR，避免把新增客户收入混入存量留存分子。
+
+登录真实后端后，点击右下角“业务计算工具”，可输入结构化数据、执行计算和导出完整结果。该功能已实现后端算法，并非静态示例响应。
+
+接口：`POST /api/workbench/revenue-retention-bridge`（沿用当前登录 JWT）。计算仅处理本次输入，不读取其他用户记录，不写入业务单据、不自动审批、不调用外部模型。算法口径、输入示例、边界和测试方法见[本次更新说明](docs/AI_WORKFLOW_UPGRADE_20261023.md)。
+
 [简体中文](README.md) | [English](README.en.md)
 
 > Customer Success Management community source project by ZhuaTech
